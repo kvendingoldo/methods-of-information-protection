@@ -1,0 +1,23 @@
+# -*- coding: cp866 -*-
+# @Author: Alexander Sharov
+
+rus2eng = {
+    u'†': u'a',
+    u'•': u'e',
+    u'Æ': u'o',
+    u'‡': u'p',
+    u'·': u'c',
+    u'Â': u'x',
+    u'Ä': u'A',
+    u'Ç': u'B',
+    u'Ö': u'E',
+    u'ä': u'K',
+    u'ç': u'H',
+    u'é': u'O',
+    u'ê': u'P',
+    u'ë': u'C',
+    u'í': u'T',
+    u'ï': u'X'
+}
+
+

@@ -1,0 +1,36 @@
+### Folders
+out/
+target/
+tmp/
+
+### Extensions
+*.ids
+*.xml
+*.iws
+*.crt
+*.key
+*.csr
+*.pem
+*.p12
+*.iml
+
+### JetBrains
+.idea
+.DS_Store
+
+### Python
+*.pyc
+*.ipynb_checkpoints*
+__pycache__
+
+### Files
+cookies.*
+
+# Temp
+*tmp*
+
+# Tex
+*.texpadtmp
+*.pdf
+*titul.*
+*task.*

@@ -1,11 +1,9 @@
 # -*- coding: cp866 -*-
 # @Author: Alexander Sharov
 
-import codecs
-
 
 def encode(encoding, container_file, secret_msg, output_file):
-    with codecs.open(container_file, 'r', encoding=encoding) as f:
+    with open(container_file, 'r', encoding=encoding) as f:
         data = f.read()
 
     state = 0
@@ -16,5 +14,5 @@ def encode(encoding, container_file, secret_msg, output_file):
                 data = data[:position + 1] + ' ' + data[position + 1:]
             state = position + 2
 
-    with codecs.open(output_file, 'w', encoding=encoding) as f:
+    with open(output_file, 'w', encoding=encoding) as f:
         f.write(data)

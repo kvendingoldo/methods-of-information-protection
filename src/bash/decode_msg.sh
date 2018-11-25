@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="${1}"
+FILE="${steganography}"
 
 ENCODING='cp866'
 

@@ -1,12 +1,11 @@
 # -*- coding: cp866 -*-
 # @Author: Alexander Sharov
 
-import codecs
 import re
 
 
 def decode(encoding, input_file, output_file):
-    with codecs.open(input_file, 'r', encoding=encoding) as f:
+    with open(input_file, 'r', encoding=encoding) as f:
         data = f.read()
 
     decoded_message = bytearray()
@@ -23,5 +22,5 @@ def decode(encoding, input_file, output_file):
                 decoded_message.append(byte)
                 byte_str = ''
 
-    with codecs.open(output_file, 'w', encoding=encoding) as f:
+    with open(output_file, 'w', encoding=encoding) as f:
         f.write(decoded_message.decode(encoding))

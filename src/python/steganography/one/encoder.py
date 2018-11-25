@@ -1,11 +1,9 @@
 # -*- coding: cp866 -*-
 # @Author: Alexander Sharov
 
-import codecs
-
 
 def encode(encoding, container_file, secret_msg, output_file):
-    with codecs.open(container_file, 'r', encoding=encoding) as f:
+    with open(container_file, 'r', encoding=encoding) as f:
         lines = f.readlines()
 
     bits_count = 0
@@ -15,6 +13,6 @@ def encode(encoding, container_file, secret_msg, output_file):
                 lines[bits_count] = lines[bits_count][:-1] + ' \n'
             bits_count += 1
 
-    with codecs.open(output_file, 'w', encoding=encoding) as f:
+    with open(output_file, 'w', encoding=encoding) as f:
         for line in lines:
             f.write(line)

@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "format": "jpg",
+      "offset": 0,
+      "signature": [
+        "FF D8 FF E0",
+        "FF D8 FF E1",
+        "FF D8 FF E2",
+        "FF D8 FF E8"
+      ]
+    },
+    {
+      "format": "tar.z",
+      "offset": 0,
+      "signature": [
+        "1F 9D",
+        "1F A0"
+      ]
+    },
+    {
+      "format": "rpm",
+      "offset": 0,
+      "signature": [
+        "ED AB EE DB"
+      ]
+    },
+    {
+      "formant": "pdf",
+      "offset": 0,
+      "signature": [
+        "25 50 44 46"
+      ]
+    },
+    {
+      "formant": "gz",
+      "offset": 0,
+      "signature": [
+        "1F 8B 08"
+      ]
+    },
+    {
+      "formant": "zip",
+      "offset": 0,
+      "signature": [
+        "50 4B 03 04",
+        "50 4B 05 06",
+        "50 4B 07 08"
+      ]
+    }
+  ]
+}

@@ -1,37 +1,31 @@
 # -*- coding: cp866 -*-
 # @Author: Alexander Sharov
 
-import codecs
+import re
+
+from three.analogue import get_rus2eng
+from three.analogue import get_rus_str
 
 
-from steganography.three.analogue import rus2eng
-
-
-def replace(encoding, index, data):
-    processed_data = data
-
+def replace(rus2eng, data, index):
     for char in data[index:]:
-        if str(char) in rus2eng:
-
-            encoded_char=str(rus2eng[char]).encode(encoding).decode(encoding)
-            processed_data = processed_data[:index - 1] + encoded_char + processed_data[index:]
-            print(processed_data)
-        index += 1
-    return index, processed_data
+        if char in rus2eng:
+            return data[:index] + rus2eng[char] + data[index + 1:]
 
 
 def encode(encoding, container_file, secret_msg, output_file):
-    with codecs.open(container_file, 'r', encoding=encoding) as f:
-        data = f.read()
+    rus2eng = get_rus2eng()
 
-    index = 0
+    with open(container_file, 'rb') as f:
+        data = f.read().decode(encoding)
+
+    allowed_alphabet = re.finditer('[' + get_rus_str() + ']', data)
 
     for byte in secret_msg.encode(encoding):
         for bit in bin(byte)[2:].zfill(8):
+            iter = next(allowed_alphabet)
             if bit == '1':
-                index, data = replace(encoding, index, data)
-            else:
-                index += 1
+                data = replace(rus2eng, data, iter.start())
 
-    with codecs.open(output_file, 'w', encoding=encoding) as f:
+    with open(output_file, 'w', encoding=encoding) as f:
         f.write(data)

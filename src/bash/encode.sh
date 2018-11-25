@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+IN_ENCODING='utf8'
+OUT_ENCODING='cp866'
 
-
-iconv -f ISO8859-1 -t CP437 words.txt > converted
+iconv -f "${IN_ENCODING}" -t "${OUT_ENCODING}" "${1}" > "${2}"
